@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DR_Rest.Managers;
+using Microsoft.EntityFrameworkCore;
 
 namespace DR_Rest
 {
@@ -31,6 +33,9 @@ namespace DR_Rest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DR_Rest", Version = "v1" });
             });
+
+            services.AddDbContext<ModelContext>(opt =>
+                opt.UseSqlServer(MySecret.ConnectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

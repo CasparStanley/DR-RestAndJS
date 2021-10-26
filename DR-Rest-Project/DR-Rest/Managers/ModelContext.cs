@@ -9,12 +9,12 @@ namespace DR_Rest.Managers
 {
     public class ModelContext : DbContext
     {
-        public ModelContext(DbContextOptions<ModelContext> options) :
-            base(options)
+        public ModelContext(DbContextOptions<ModelContext> options) : base(options)
         {
-            //
+
         }
-        public DbSet<Model> Records { get; set; }
+
+        public DbSet<Model> DR { get; set; }
     }
 
 }

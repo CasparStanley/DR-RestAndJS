@@ -30,34 +30,34 @@ namespace DR_Rest.Managers
 
         public IEnumerable<Model> Get()
         {
-            return _data.Records;
+            return _data.DR;
         }
 
         public Model Get(int id)
         {
-            return _data.Records.Find(id);
+            return _data.DR.Find(id);
 
             throw new KeyNotFoundException();
         }
 
         public IEnumerable<Model> GetFromSubstring(string s)
         {
-            return _data.Records.Where(i => i.Title.ToLower().Contains(s.ToLower()));
+            return _data.DR.Where(i => i.Title.ToLower().Contains(s.ToLower()));
         }
 
         public IEnumerable<Model> GetWithFilter(FilterItem filter)
         {
             if (filter.LowYear > 0 && filter.HighYear == 0)
             {
-                return _data.Records.Where(i => i.PublicYear >= filter.LowYear);
+                return _data.DR.Where(i => i.PublicYear >= filter.LowYear);
             }
             else if (filter.HighYear > filter.LowYear)
             {
-                return _data.Records.Where(i => i.PublicYear >= filter.LowYear && i.PublicYear <= filter.HighYear);
+                return _data.DR.Where(i => i.PublicYear >= filter.LowYear && i.PublicYear <= filter.HighYear);
             }
             else
             {
-                return _data.Records;
+                return _data.DR;
             }
         }
 
