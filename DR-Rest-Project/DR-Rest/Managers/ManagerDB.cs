@@ -16,9 +16,19 @@ namespace DR_Rest.Managers
         }
         public bool Create(Model value)
         {
-            //hej
-            _data.Add(value);
-            return true;
+            try
+            {
+                value.Id = 0;
+                _data.DR.Add(value);
+                _data.SaveChanges();
+                return true;
+             
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public Model Delete(int id)
@@ -63,18 +73,10 @@ namespace DR_Rest.Managers
 
         public bool Update(int id, Model value)
         {
-            Model model = Get(id);
-            if (model != null)
-            {
-                model.Id = value.Id;
-                model.Artist = value.Artist;
-                model.Title = value.Title;
-                model.Duration = value.Duration;
-                model.PublicYear = value.PublicYear;
-                return true;
-            }
-
-            return false;
+            value.Id = id;
+            _data.DR.Update(value);
+            _data.SaveChanges();
+            return true;
         }
     }
 }
