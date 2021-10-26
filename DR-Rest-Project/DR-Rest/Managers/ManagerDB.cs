@@ -34,7 +34,8 @@ namespace DR_Rest.Managers
         public Model Delete(int id)
         {
             Model model = Get(id);
-            _data.Remove(model);
+            _data.DR.Remove(model);
+            _data.SaveChanges();
             return model;
         }
 

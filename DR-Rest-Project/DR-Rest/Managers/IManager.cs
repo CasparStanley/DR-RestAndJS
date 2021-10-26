@@ -7,7 +7,7 @@ using ModelLib;
 
 namespace DR_Rest.Managers
 {
-    interface IManager
+    public interface IManager
     {
         IEnumerable<Model> Get();
 
