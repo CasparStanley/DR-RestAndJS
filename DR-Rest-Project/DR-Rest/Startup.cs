@@ -33,6 +33,16 @@ namespace DR_Rest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DR_Rest", Version = "v1" });
             });
+            services.AddCors(options =>
+            {
+              
+                options.AddPolicy("AllowAny",
+                builder => builder.AllowAnyOrigin().
+               AllowAnyMethod().
+               AllowAnyHeader()
+                );
+               
+            });
 
             services.AddCors(options =>
             {

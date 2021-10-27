@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DR-Rest</name>
+    </assembly>
+    <members>
+        <member name="T:DR_Rest.Managers.ManagerDB">
+            <summary>
+            Hej
+            </summary>
+        </member>
+    </members>
+</doc>

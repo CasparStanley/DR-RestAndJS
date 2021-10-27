@@ -6,6 +6,9 @@ using ModelLib;
 
 namespace DR_Rest.Managers
 {
+    /// <summary>
+    /// Hej
+    /// </summary>
     public class ManagerDB : IManager
     {
         private readonly ModelContext _data;
