@@ -11,8 +11,7 @@ namespace DR_Rest.Managers
     public class Manager : IManager
     {
 
-        private static readonly List<Model> _data = new List<Model>()
-
+        private static readonly List<Model> _data = new()
         {
             new Model(1, "Eminem", "When im gone", 120, 2006),
             new Model(2, "Lukas graham", "Drunken", 150, 2015)
